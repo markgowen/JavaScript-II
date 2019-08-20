@@ -12,9 +12,9 @@ function school(schoolName) {
 
     function cohort(cohortName) {
       console.log(cohortName);
-    } //this closes the city
+    } //this closes the cohort
     cohort('Web 23');
-  } //this closes the province
+  } //this closes the track
   track('Full Stack Web Development');
 } // this closes the school
 school('LambdaSchool');
