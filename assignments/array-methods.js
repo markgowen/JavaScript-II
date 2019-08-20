@@ -476,7 +476,7 @@ console.log(firstNamesAllCaps);
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = runners.filter(function(item) {
-    return item.shirt_size === 'L'
+  return item.shirt_size === 'L';
 });
 
 console.log(runnersLargeSizeShirt);
@@ -485,14 +485,31 @@ console.log(runnersLargeSizeShirt);
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = runners.reduce(function(accumulator, item) {
   return accumulator + item.donation;
-}, 0)
+}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The companies participating can receive a tax deduction for employees participating, we need to compile a list of the emails in order to send them forms to complete.
+let emails = [];
 
+runners.forEach(function(list) {
+  return emails.push(`${list.email}`);
+});
+
+console.log(emails);
 // Problem 2
-
+// A Scandal has occured!! Employees from the company Avavee have been caught using performance enhancing drugs and have been eliminated from the competition. Compile a list of everyone from this company. This will be an array of objects.
+let companyName = runners.filter(function(item) {
+  return item.company_name === 'Avavee';
+});
+console.log(companyName);
 // Problem 3
+// The event director needs to have all the runners' last names in uppercase because the director BECAME DRUNK WITH POWER and needed all of the first names uppercase. Populate an array called `lastNamesAllCaps`. This array will contain just strings.
+let lastNamesAllCaps = runners.map(function(item) {
+  return item.last_name.toUpperCase();
+});
+
+console.log(lastNamesAllCaps);
