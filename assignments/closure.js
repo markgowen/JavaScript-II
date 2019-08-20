@@ -4,9 +4,22 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function school(schoolName) {
+  console.log(`${schoolName} is the bestest ever school`);
+
+  function track(trackName) {
+    console.log(trackName);
+
+    function cohort(cohortName) {
+      console.log(cohortName);
+    } //this closes the city
+    cohort('Web 23');
+  } //this closes the province
+  track('Full Stack Web Development');
+} // this closes the school
+school('LambdaSchool');
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
